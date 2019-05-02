@@ -87,6 +87,9 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public List<Owner> findAllByLastNameLike(String lastName) {
 
         //todo - impl
-        return null;
+       return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().contains(lastName))
+                .collect(Collectors.toList());
     }
 }
