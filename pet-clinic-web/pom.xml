@@ -16,6 +16,8 @@
         <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
         <webjars-jquery.version>2.2.4</webjars-jquery.version>
         <wro4j.version>1.8.0</wro4j.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
