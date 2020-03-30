@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import static guru.springframework.sfgpetclinic.controllers.VisitController.PETS_CREATE_OR_UPDATE_VISIT_FORM;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -31,7 +32,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 class VisitControllerTest {
 
-    private static final String PETS_CREATE_OR_UPDATE_VISIT_FORM = "pets/createOrUpdateVisitForm";
     private static final String REDIRECT_OWNERS_1 = "redirect:/owners/{ownerId}";
     private static final String YET_ANOTHER_VISIT_DESCRIPTION = "yet another visit";
 
@@ -57,18 +57,18 @@ class VisitControllerTest {
         when(petService.findById(anyLong()))
                 .thenReturn(
                         Pet.builder()
-                            .id(petId)
-                            .birthDate(LocalDate.of(2018,11,13))
-                            .name("Cutie")
-                            .visits(new HashSet<>())
-                            .owner(Owner.builder()
-                                .id(ownerId)
-                                .lastName("Doe")
-                                .firstName("Joe")
-                                .build())
-                            .petType(PetType.builder()
-                                    .name("Dog").build())
-                            .build()
+                                .id(petId)
+                                .birthDate(LocalDate.of(2018, 11, 13))
+                                .name("Cutie")
+                                .visits(new HashSet<>())
+                                .owner(Owner.builder()
+                                        .id(ownerId)
+                                        .lastName("Doe")
+                                        .firstName("Joe")
+                                        .build())
+                                .petType(PetType.builder()
+                                        .name("Dog").build())
+                                .build()
                 );
 
         uriVariables.clear();
@@ -91,14 +91,29 @@ class VisitControllerTest {
 
 
     @Test
-    void processNewVisitForm() throws Exception {
+    void processNewVisitFormTest() throws Exception {
+        // When
         mockMvc.perform(post(visitsUri)
-                            .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                            .param("date","2018-11-11")
-                            .param("description", YET_ANOTHER_VISIT_DESCRIPTION))
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("date", "2018-11-11")
+                .param("description", YET_ANOTHER_VISIT_DESCRIPTION))
+
+                // Then
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name(REDIRECT_OWNERS_1))
                 .andExpect(model().attributeExists("visit"))
-        ;
+                .andExpect(model().attributeExists("pet"));
+    }
+
+    @Test
+    void processNewVisitFormValidationFailedTest() throws Exception {
+        // When
+        mockMvc.perform(post(visitsUri).contentType(MediaType.APPLICATION_FORM_URLENCODED))
+
+                // Then
+                .andExpect(status().isOk())
+                .andExpect(view().name(PETS_CREATE_OR_UPDATE_VISIT_FORM))
+                .andExpect(model().attributeExists("visit"))
+                .andExpect(model().attributeExists("pet"));
     }
 }
