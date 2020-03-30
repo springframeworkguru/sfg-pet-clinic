@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import guru.springframework.sfgpetclinic.formatters.PetTypeFormatter;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -58,8 +60,11 @@ class PetControllerTest {
         petTypes.add(PetType.builder().id(1L).name("Dog").build());
         petTypes.add(PetType.builder().id(2L).name("Cat").build());
 
+        var conversionService = new DefaultFormattingConversionService();
+        conversionService.addFormatterForFieldType(PetType.class, new PetTypeFormatter(petTypeService));
         mockMvc = MockMvcBuilders
                 .standaloneSetup(petController)
+                .setConversionService(conversionService)
                 .build();
     }
 
@@ -84,7 +89,9 @@ class PetControllerTest {
         // When
         mockMvc.perform(post(URL_PETS_NEW)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("name", "Dog"))
+                .param("name", "Milou")
+                .param("birthDate", "2020-01-01")
+                .param("petType", "Dog"))
 
                 // Then
                 .andExpect(status().is3xxRedirection())
@@ -134,7 +141,9 @@ class PetControllerTest {
         // When
         mockMvc.perform(post(URL_PETS_EDIT)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("name", "Dog"))
+                .param("name", "Caline")
+                .param("birthDate", "2020-01-01")
+                .param("petType", "Cat"))
 
                 // Then
                 .andExpect(status().is3xxRedirection())

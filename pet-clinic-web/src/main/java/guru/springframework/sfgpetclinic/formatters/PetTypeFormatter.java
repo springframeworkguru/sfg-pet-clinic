@@ -13,7 +13,7 @@ import java.util.Locale;
  * Created by jt on 9/22/18.
  */
 @Component
-public class PetTypeFormatter implements Formatter<PetType> {
+public final class PetTypeFormatter implements Formatter<PetType> {
 
     private final PetTypeService petTypeService;
 
