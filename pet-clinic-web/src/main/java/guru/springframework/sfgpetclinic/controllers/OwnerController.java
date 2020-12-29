@@ -32,7 +32,7 @@ public class OwnerController {
     }
 
 
-    @RequestMapping("/find")
+    @GetMapping("/find")
     public String findOwners(Model model){
         model.addAttribute("owner", Owner.builder().build());
         return "owners/findOwners";
@@ -46,7 +46,7 @@ public class OwnerController {
         }
 
         // find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
+        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
 
         if (results.isEmpty()) {
             // no owners found
