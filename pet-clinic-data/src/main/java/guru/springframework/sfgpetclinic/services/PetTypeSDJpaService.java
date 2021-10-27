@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.springdatajpa;
+package guru.springframework.sfgpetclinic.services;
 
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
