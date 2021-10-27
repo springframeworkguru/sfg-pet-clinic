@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.springdatajpa;
+package guru.springframework.sfgpetclinic.services;
 
 import guru.springframework.sfgpetclinic.model.Visit;
 import guru.springframework.sfgpetclinic.repositories.VisitRepository;
@@ -13,12 +13,11 @@ import java.util.Set;
  * Created by jt on 8/7/18.
  */
 @Service
-@Profile("springdatajpa")
-public class VisitSDJpaService implements VisitService {
+public class DefaultVisitService implements VisitService {
 
     private final VisitRepository visitRepository;
 
-    public VisitSDJpaService(VisitRepository visitRepository) {
+    public DefaultVisitService(VisitRepository visitRepository) {
         this.visitRepository = visitRepository;
     }
 

@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.springdatajpa;
+package guru.springframework.sfgpetclinic.services;
 
 import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.repositories.SpecialtyRepository;
@@ -13,12 +13,11 @@ import java.util.Set;
  * Created by jt on 8/5/18.
  */
 @Service
-@Profile("springdatajpa")
-public class SpecialitySDJpaService implements SpecialtyService {
+public class DefaultSpecialityService implements SpecialtyService {
 
     private final SpecialtyRepository specialtyRepository;
 
-    public SpecialitySDJpaService(SpecialtyRepository specialtyRepository) {
+    public DefaultSpecialityService(SpecialtyRepository specialtyRepository) {
         this.specialtyRepository = specialtyRepository;
     }
 
