@@ -1,15 +1,35 @@
 package guru.springframework.sfgpetclinic.repositories.map;
 
+import guru.springframework.sfgpetclinic.model.BaseEntity;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.Optional;
+import java.util.*;
 
-public class CrudMapRepository<T, ID> implements CrudRepository<T, ID> {
+public class CrudMapRepository<T extends BaseEntity, ID extends Long> implements CrudRepository<T, ID> {
+
+    protected Map<Long, T> map = new HashMap<>();
 
     @Override
     public <S extends T> S save(S s) {
-        System.out.println(s.getClass().getSimpleName() + " Map Repository : save()");
-        return null;
+        if(s != null) {
+            if(s.getId() == null){
+                s.setId(getNextId());
+            }
+            map.put(s.getId(), s);
+        } else {
+            throw new RuntimeException("Object cannot be null");
+        }
+        return s;
+    }
+
+    private Long getNextId(){
+        Long nextId = null;
+        try {
+            nextId = Collections.max(map.keySet()) + 1;
+        } catch (NoSuchElementException e) {
+            nextId = 1L;
+        }
+        return nextId;
     }
 
     @Override
@@ -19,7 +39,7 @@ public class CrudMapRepository<T, ID> implements CrudRepository<T, ID> {
 
     @Override
     public Optional<T> findById(ID id) {
-        return Optional.empty();
+        return Optional.of(map.get(id));
     }
 
     @Override
@@ -29,7 +49,7 @@ public class CrudMapRepository<T, ID> implements CrudRepository<T, ID> {
 
     @Override
     public Iterable<T> findAll() {
-        return null;
+        return new HashSet<>(map.values());
     }
 
     @Override
@@ -44,12 +64,12 @@ public class CrudMapRepository<T, ID> implements CrudRepository<T, ID> {
 
     @Override
     public void deleteById(ID id) {
-
+        map.remove(id);
     }
 
     @Override
     public void delete(T t) {
-
+        map.entrySet().removeIf(entry -> entry.getValue().equals(t));
     }
 
     @Override
