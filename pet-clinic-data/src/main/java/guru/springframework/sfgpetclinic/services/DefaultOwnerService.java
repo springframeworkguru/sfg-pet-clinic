@@ -16,14 +16,14 @@ import java.util.Set;
  * Created by jt on 8/5/18.
  */
 @Service
-public class OwnerSDJpaService implements OwnerService {
+public class DefaultOwnerService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
 
-    public OwnerSDJpaService(OwnerRepository ownerRepository, PetRepository petRepository,
-                             PetTypeRepository petTypeRepository) {
+    public DefaultOwnerService(OwnerRepository ownerRepository, PetRepository petRepository,
+                               PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
         this.petRepository = petRepository;
         this.petTypeRepository = petTypeRepository;

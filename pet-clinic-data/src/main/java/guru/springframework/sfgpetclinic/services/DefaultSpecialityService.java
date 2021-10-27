@@ -13,11 +13,11 @@ import java.util.Set;
  * Created by jt on 8/5/18.
  */
 @Service
-public class SpecialitySDJpaService implements SpecialtyService {
+public class DefaultSpecialityService implements SpecialtyService {
 
     private final SpecialtyRepository specialtyRepository;
 
-    public SpecialitySDJpaService(SpecialtyRepository specialtyRepository) {
+    public DefaultSpecialityService(SpecialtyRepository specialtyRepository) {
         this.specialtyRepository = specialtyRepository;
     }
 

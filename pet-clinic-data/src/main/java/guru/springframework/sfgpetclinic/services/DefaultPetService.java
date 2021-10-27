@@ -13,11 +13,11 @@ import java.util.Set;
  * Created by jt on 8/5/18.
  */
 @Service
-public class PetSDJpaService implements PetService {
+public class DefaultPetService implements PetService {
 
     private final PetRepository petRepository;
 
-    public PetSDJpaService(PetRepository petRepository) {
+    public DefaultPetService(PetRepository petRepository) {
         this.petRepository = petRepository;
     }
 
