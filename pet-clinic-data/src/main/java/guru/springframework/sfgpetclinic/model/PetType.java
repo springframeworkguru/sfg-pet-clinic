@@ -10,26 +10,15 @@ import javax.persistence.Table;
  * Created by jt on 7/13/18.
  */
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "types")
-public class PetType extends BaseEntity {
+public class PetType {
+    private String name;
 
-    @Builder
-    public PetType(Long id, String name) {
-        super(id);
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    @Column(name = "name")
-    private String name;
-
-
-    @Override
-    public String toString() {
-        return name;
-    }
 }
