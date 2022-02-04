@@ -1,0 +1,12 @@
+guru\springframework\sfgpetclinic\repositories\SpecialtyRepository.class
+guru\springframework\sfgpetclinic\model\BaseEntity.class
+guru\springframework\sfgpetclinic\model\Person.class
+guru\springframework\sfgpetclinic\model\Owner.class
+guru\springframework\sfgpetclinic\repositories\OwnerRepository.class
+guru\springframework\sfgpetclinic\repositories\PetTypeRepository.class
+guru\springframework\sfgpetclinic\model\Speciality.class
+guru\springframework\sfgpetclinic\repositories\PetRepository.class
+guru\springframework\sfgpetclinic\model\PetType.class
+guru\springframework\sfgpetclinic\model\Pet.class
+guru\springframework\sfgpetclinic\model\Vet.class
+guru\springframework\sfgpetclinic\repositories\VetRepository.class
