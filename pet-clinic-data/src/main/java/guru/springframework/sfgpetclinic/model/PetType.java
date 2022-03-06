@@ -1,10 +1,13 @@
 package guru.springframework.sfgpetclinic.model;
 
-import lombok.*;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Created by jt on 7/13/18.
@@ -16,6 +19,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name = "types")
+@SuppressWarnings("JpaDataSourceORMInspection")
 public class PetType extends BaseEntity {
 
     @Builder

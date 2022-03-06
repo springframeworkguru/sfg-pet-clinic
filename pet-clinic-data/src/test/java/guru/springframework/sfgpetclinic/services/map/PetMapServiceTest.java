@@ -4,34 +4,34 @@ import guru.springframework.sfgpetclinic.model.Pet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * JUnit5 test.
  *
  * @author <a href="mailto:k.czechowski83@gmail.com">Krzysztof Czechowski</a>
+ * @author <a href="https://www.github.com/yonatankarp>Yonatan Karp-Rudin</a>
  */
 
 class PetMapServiceTest {
 
     private PetMapService petMapService;
 
-    private final Long petId = 1L;
+    private static final Long PET_ID = 1L;
 
     @BeforeEach
     void setUp() {
-
         petMapService = new PetMapService();
 
-        petMapService.save(Pet.builder().id(petId).build());
+        petMapService.save(Pet.builder().id(PET_ID).build());
     }
 
     @Test
     void findAll() {
 
-        Set<Pet> petSet = petMapService.findAll();
+        final var petSet = petMapService.findAll();
 
         assertEquals(1, petSet.size());
     }
@@ -39,15 +39,15 @@ class PetMapServiceTest {
     @Test
     void findByIdExistingId() {
 
-        Pet pet = petMapService.findById(petId);
+        final var pet = petMapService.findById(PET_ID);
 
-        assertEquals(petId, pet.getId());
+        assertEquals(PET_ID, pet.getId());
     }
 
     @Test
     void findByIdNotExistingId() {
 
-        Pet pet = petMapService.findById(5L);
+        final var pet = petMapService.findById(5L);
 
         assertNull(pet);
     }
@@ -55,7 +55,7 @@ class PetMapServiceTest {
     @Test
     void findByIdNullId() {
 
-        Pet pet = petMapService.findById(null);
+        final var pet = petMapService.findById(null);
 
         assertNull(pet);
     }
@@ -63,11 +63,11 @@ class PetMapServiceTest {
     @Test
     void saveExistingId() {
 
-        Long id = 2L;
+        final Long id = 2L;
 
-        Pet pet2 = Pet.builder().id(id).build();
+        final var pet2 = Pet.builder().id(id).build();
 
-        Pet savedPet = petMapService.save(pet2);
+        final var savedPet = petMapService.save(pet2);
 
         assertEquals(id, savedPet.getId());
     }
@@ -75,11 +75,11 @@ class PetMapServiceTest {
     @Test
     void saveDuplicateId() {
 
-        Long id = 1L;
+        final Long id = 1L;
 
-        Pet pet2 = Pet.builder().id(id).build();
+        final var pet2 = Pet.builder().id(id).build();
 
-        Pet savedPet = petMapService.save(pet2);
+        final var savedPet = petMapService.save(pet2);
 
         assertEquals(id, savedPet.getId());
         assertEquals(1, petMapService.findAll().size());
@@ -88,7 +88,7 @@ class PetMapServiceTest {
     @Test
     void saveNoId() {
 
-        Pet savedPet = petMapService.save(Pet.builder().build());
+        final var savedPet = petMapService.save(Pet.builder().build());
 
         assertNotNull(savedPet);
         assertNotNull(savedPet.getId());
@@ -98,7 +98,7 @@ class PetMapServiceTest {
     @Test
     void deletePet() {
 
-        petMapService.delete(petMapService.findById(petId));
+        petMapService.delete(petMapService.findById(PET_ID));
 
         assertEquals(0, petMapService.findAll().size());
 
@@ -107,7 +107,7 @@ class PetMapServiceTest {
     @Test
     void deleteWithWrongId() {
 
-        Pet pet = Pet.builder().id(5L).build();
+        final var pet = Pet.builder().id(5L).build();
 
         petMapService.delete(pet);
 
@@ -117,7 +117,7 @@ class PetMapServiceTest {
     @Test
     void deleteWithNullId() {
 
-        Pet pet = Pet.builder().build();
+        final var pet = Pet.builder().build();
 
         petMapService.delete(pet);
 
@@ -136,7 +136,7 @@ class PetMapServiceTest {
     @Test
     void deleteByIdCorrectId() {
 
-        petMapService.deleteById(petId);
+        petMapService.deleteById(PET_ID);
 
         assertEquals(0, petMapService.findAll().size());
     }
