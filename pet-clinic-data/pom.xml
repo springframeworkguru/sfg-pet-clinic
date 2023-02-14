@@ -28,6 +28,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -52,10 +53,6 @@
                     </configuration>
                 </execution>
             </executions>
-            <configuration>
-            	<source>1.8</source>
-                <target>1.8</target>
-            </configuration>
             </plugin>
         </plugins>
     </build>
