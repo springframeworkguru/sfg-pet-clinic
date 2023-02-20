@@ -14,4 +14,5 @@ import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 @Service
 public class OwnerMapService extends PersonMapService implements OwnerService {
 
+
 }

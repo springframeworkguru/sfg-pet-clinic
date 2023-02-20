@@ -28,7 +28,6 @@ public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
 	
 	public T save(ID id, T object) {
 		map.put(id, object);
-		
 		return object;
 	}
 	
@@ -39,4 +38,6 @@ public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
 	public void delete(T object) {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
 	}
+	
+	
 }
