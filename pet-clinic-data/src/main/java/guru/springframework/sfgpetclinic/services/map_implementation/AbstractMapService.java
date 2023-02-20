@@ -1,14 +1,14 @@
 /**
  * 
  */
-package guru.springframework.sfgpetclinic.services.map;
+package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import guru.springframework.sfgpetclinic.services.CrudService;
+import guru.springframework.sfgpetclinic.services.interfaces.CrudService;
 
 /**
  * @author Hoek0024 on 15 feb. 2023
@@ -16,7 +16,7 @@ import guru.springframework.sfgpetclinic.services.CrudService;
  */
 public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
 
-	protected Map<ID, T> map = new HashMap<>();
+	protected Map<ID, T> map = new HashMap<>(); 
 	
 	public Set<T> findAll() {
 		return new HashSet<>(map.values());

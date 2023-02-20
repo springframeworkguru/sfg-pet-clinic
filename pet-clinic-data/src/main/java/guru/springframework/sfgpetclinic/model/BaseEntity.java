@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Hoek0024 on 14 feb. 2023
  *
  */
-public class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 	
 	private Long id;
 
