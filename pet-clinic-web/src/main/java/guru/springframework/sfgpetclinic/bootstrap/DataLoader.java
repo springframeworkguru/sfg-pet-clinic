@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Vet;
+import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
+
 /**
  * @author Hoek0024 on 17 feb. 2023
- *
+ *	
  */
 @Component
 public class DataLoader implements CommandLineRunner {
