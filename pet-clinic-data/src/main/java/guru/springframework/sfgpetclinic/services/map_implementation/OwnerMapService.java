@@ -13,7 +13,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
  *
  */
 @Service
-public class OwnerMapService extends PersonMapService<Owner> implements OwnerService<Owner> {
+public class OwnerMapService extends PersonMapService<Owner> implements OwnerService {
 
 
 }

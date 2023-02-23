@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 
 /**
@@ -20,13 +19,13 @@ import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 @Controller
 public class OwnerController {
 
-	private final OwnerService<Owner> ownerService;
+	private final OwnerService ownerService;
 
 	/**
 	 * @param ownerService
 	 */
 	@Autowired
-	public OwnerController(OwnerService<Owner> ownerService) {
+	public OwnerController(OwnerService ownerService) {
 		this.ownerService = ownerService;
 	}
 

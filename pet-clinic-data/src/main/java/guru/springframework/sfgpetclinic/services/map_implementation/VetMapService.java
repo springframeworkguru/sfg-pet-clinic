@@ -13,6 +13,6 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
  *
  */
 @Service
-public class VetMapService extends PersonMapService<Vet> implements VetService<Vet> {
+public class VetMapService extends PersonMapService<Vet> implements VetService {
 
 }

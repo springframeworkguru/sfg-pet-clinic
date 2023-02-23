@@ -8,8 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
+import guru.springframework.sfgpetclinic.services.interfaces.PetTypeService;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
 
@@ -20,22 +22,34 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-	private final OwnerService<Owner> ownerService;
-	private final VetService<Vet> vetService;
+	private final OwnerService ownerService;
+	private final VetService vetService;
+	private final PetTypeService petTypeService;
 	
 	/**
 	 * @param ownerService
 	 * @param vetService
+	 * @param petTypeService
 	 */
 	@Autowired
-	public DataLoader(OwnerService<Owner> ownerService, VetService<Vet> vetService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService = petTypeService;
 	}
 	
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		PetType savedDogType = petTypeService.save(dog);
+		
+		PetType cat = new PetType();
+		cat.setName("Cat");
+		PetType savedCatType = petTypeService.save(cat);
+		
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");

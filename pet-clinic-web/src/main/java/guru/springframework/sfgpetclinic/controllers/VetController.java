@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
 /**
@@ -20,13 +19,13 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 @Controller
 public class VetController {
 
-	private final VetService<Vet> vetService;
+	private final VetService vetService;
 
 	/**
 	 * @param vetService
 	 */
 	@Autowired
-	public VetController(VetService<Vet> vetService) {
+	public VetController(VetService vetService) {
 		this.vetService = vetService;
 	}
 
