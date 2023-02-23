@@ -5,6 +5,7 @@ package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import org.springframework.stereotype.Service;
 
+import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
 /**
@@ -12,6 +13,6 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
  *
  */
 @Service
-public class VetMapService extends PersonMapService implements VetService {
+public class VetMapService extends PersonMapService<Vet> implements VetService<Vet> {
 
 }

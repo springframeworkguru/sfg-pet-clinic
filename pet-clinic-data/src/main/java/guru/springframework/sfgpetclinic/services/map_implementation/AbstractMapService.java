@@ -8,13 +8,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import guru.springframework.sfgpetclinic.services.interfaces.CrudService;
-
 /**
  * @author Hoek0024 on 15 feb. 2023
  *
  */
-public abstract class AbstractMapService<T, ID> implements CrudService<T, ID> {
+public abstract class AbstractMapService<T, ID> {
 
 	protected Map<ID, T> map = new HashMap<>(); 
 	

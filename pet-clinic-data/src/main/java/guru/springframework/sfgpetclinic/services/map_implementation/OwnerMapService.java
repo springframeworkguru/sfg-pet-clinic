@@ -5,6 +5,7 @@ package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import org.springframework.stereotype.Service;
 
+import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 
 /**
@@ -12,7 +13,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
  *
  */
 @Service
-public class OwnerMapService extends PersonMapService implements OwnerService {
+public class OwnerMapService extends PersonMapService<Owner> implements OwnerService<Owner> {
 
 
 }

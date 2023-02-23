@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import guru.springframework.sfgpetclinic.model.*;
+import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
@@ -19,15 +20,15 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-	private final OwnerService ownerService;
-	private final VetService vetService;
+	private final OwnerService<Owner> ownerService;
+	private final VetService<Vet> vetService;
 	
 	/**
 	 * @param ownerService
 	 * @param vetService
 	 */
 	@Autowired
-	public DataLoader(OwnerService ownerService, VetService vetService) {
+	public DataLoader(OwnerService<Owner> ownerService, VetService<Vet> vetService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 	}
