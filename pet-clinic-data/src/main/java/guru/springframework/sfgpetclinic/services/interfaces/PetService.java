@@ -10,5 +10,5 @@ import guru.springframework.sfgpetclinic.model.Pet;
  *
  */
 public interface PetService extends BaseEntityService<Pet>{
-	
+
 }

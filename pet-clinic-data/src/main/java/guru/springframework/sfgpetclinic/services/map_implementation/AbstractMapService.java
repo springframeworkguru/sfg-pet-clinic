@@ -37,5 +37,9 @@ public abstract class AbstractMapService<T, ID> {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
 	}
 	
-	
+	public void nullCheck(T object) {
+		if (object == null) {
+			throw new RuntimeException("Entity can not be null");
+		}
+	}
 }

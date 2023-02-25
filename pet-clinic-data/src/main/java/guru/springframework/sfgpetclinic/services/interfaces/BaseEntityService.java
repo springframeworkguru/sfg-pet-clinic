@@ -10,5 +10,5 @@ import guru.springframework.sfgpetclinic.model.BaseEntity;
  *
  */
 public interface BaseEntityService<T extends BaseEntity> extends CrudService<T, Long> {
-		
+		public void nullCheck(T baseEntity);
 }

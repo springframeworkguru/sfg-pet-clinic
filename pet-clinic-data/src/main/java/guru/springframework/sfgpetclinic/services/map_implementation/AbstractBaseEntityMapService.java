@@ -14,9 +14,7 @@ import guru.springframework.sfgpetclinic.model.BaseEntity;
 public abstract class AbstractBaseEntityMapService<T extends BaseEntity> extends AbstractMapService<T, Long> {
 
 	public T save(T baseEntity) {
-		if (baseEntity == null) {
-			throw new RuntimeException("BaseEntity can not be null");
-		}
+		nullCheck(baseEntity);
 		
 		if (baseEntity.getId() == null) {
 				baseEntity.setId(getNextId());
