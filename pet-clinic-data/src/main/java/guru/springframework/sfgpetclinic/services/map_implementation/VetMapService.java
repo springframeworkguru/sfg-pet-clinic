@@ -6,6 +6,7 @@ package guru.springframework.sfgpetclinic.services.map_implementation;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Vet;
+import guru.springframework.sfgpetclinic.services.interfaces.SpecialityService;
 import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 
 /**
@@ -15,4 +16,21 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
 @Service
 public class VetMapService extends PersonMapService<Vet> implements VetService {
 
+	private final SpecialityService specialityService;
+
+	/**
+	 * @param specialityService
+	 */
+	public VetMapService(SpecialityService specialityService) {
+		this.specialityService = specialityService;
+	}
+
+	public Vet save(Vet vet) {
+		if (vet == null) {
+			return null;
+		}
+
+		vet.getSpecialities().forEach(s -> specialityService.save(s));
+		return super.save(vet);
+	}
 }
