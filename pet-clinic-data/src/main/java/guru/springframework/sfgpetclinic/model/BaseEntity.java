@@ -5,12 +5,19 @@ package guru.springframework.sfgpetclinic.model;
 
 import java.io.Serializable;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.MappedSuperclass;
+
 /**
  * @author Hoek0024 on 14 feb. 2023
  *
  */
-public abstract class BaseEntity implements Serializable {
+@MappedSuperclass
+public class BaseEntity implements Serializable {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	/**
