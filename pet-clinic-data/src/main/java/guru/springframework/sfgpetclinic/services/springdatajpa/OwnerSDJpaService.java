@@ -3,6 +3,7 @@
  */
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Owner;
@@ -15,6 +16,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.PetService;
  *
  */
 @Service
+@Profile("jpa")
 public class OwnerSDJpaService<T extends Owner, R extends OwnerRepository<T>> extends PersonSDJpaService<Owner, R>
 		implements OwnerService {
 
