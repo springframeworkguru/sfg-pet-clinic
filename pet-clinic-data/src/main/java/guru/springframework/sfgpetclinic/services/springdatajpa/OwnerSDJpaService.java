@@ -17,7 +17,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.PetService;
  */
 @Service
 @Profile("jpa")
-public class OwnerSDJpaService<T extends Owner, R extends OwnerRepository<T>> extends PersonSDJpaService<Owner, R>
+public class OwnerSDJpaService<T extends Owner, R extends OwnerRepository<Owner>> extends PersonSDJpaService<Owner, R>
 		implements OwnerService {
 
 	/**

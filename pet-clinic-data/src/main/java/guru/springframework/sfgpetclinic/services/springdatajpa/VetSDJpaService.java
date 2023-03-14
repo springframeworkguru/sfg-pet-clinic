@@ -16,7 +16,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.VetService;
  */
 @Service
 @Profile("jpa")
-public class VetSDJpaService<T extends Vet, R extends VetRepository<T>> extends PersonSDJpaService<Vet, R>
+public class VetSDJpaService<T extends Vet, R extends VetRepository<Vet>> extends PersonSDJpaService<Vet, R>
 		implements VetService {
 
 	/**
