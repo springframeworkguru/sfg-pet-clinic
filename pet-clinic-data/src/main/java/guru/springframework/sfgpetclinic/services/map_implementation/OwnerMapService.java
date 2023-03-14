@@ -3,6 +3,7 @@
  */
 package guru.springframework.sfgpetclinic.services.map_implementation;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Owner;
@@ -14,6 +15,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.PetService;
  *
  */
 @Service
+@Profile("map")
 public class OwnerMapService extends PersonMapService<Owner> implements OwnerService {
 
 	private final PetService petService;

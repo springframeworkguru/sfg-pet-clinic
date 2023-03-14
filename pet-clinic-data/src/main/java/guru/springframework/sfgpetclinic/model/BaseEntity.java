@@ -5,16 +5,19 @@ package guru.springframework.sfgpetclinic.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  * @author Hoek0024 on 14 feb. 2023
  *
  */
-@MappedSuperclass // this will never be mapped as a table in the database, only the subclasses under this superclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BaseEntity implements Serializable {
 	
 	@Id
