@@ -7,13 +7,14 @@ import java.io.Serializable;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
  * @author Hoek0024 on 14 feb. 2023
  *
  */
-@MappedSuperclass
+@MappedSuperclass // this will never be mapped as a table in the database, only the subclasses under this superclass
 public class BaseEntity implements Serializable {
 	
 	@Id
