@@ -3,6 +3,7 @@
  */
 package guru.springframework.sfgpetclinic.services.map_implementation;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.sfgpetclinic.model.Pet;
@@ -15,6 +16,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.PetTypeService;
  *
  */
 @Service
+@Profile({"default", "map"})
 public class PetMapService extends AbstractBaseEntityMapService<Pet> implements PetService {
 
 	private final PetTypeService petTypeService;

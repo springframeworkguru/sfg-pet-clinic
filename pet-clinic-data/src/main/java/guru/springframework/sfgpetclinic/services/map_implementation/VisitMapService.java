@@ -14,7 +14,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.VisitService;
  *
  */
 @Service
-@Profile("map")
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractBaseEntityMapService<Visit> implements VisitService {
 
 	@Override
