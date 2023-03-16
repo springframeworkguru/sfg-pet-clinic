@@ -22,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "owners")
-public class Owner extends Person {
+public class Owner extends AbstractPerson {
 	@Column(name = "address")
 	private String address;
 

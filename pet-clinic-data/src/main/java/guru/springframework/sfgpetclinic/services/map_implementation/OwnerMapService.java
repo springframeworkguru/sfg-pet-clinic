@@ -16,7 +16,7 @@ import guru.springframework.sfgpetclinic.services.interfaces.PetService;
  */
 @Service
 @Profile({"default", "map"})
-public class OwnerMapService extends PersonMapService<Owner> implements OwnerService {
+public class OwnerMapService extends AbstractPersonMapService<Owner> implements OwnerService {
 
 	private final PetService petService;
 

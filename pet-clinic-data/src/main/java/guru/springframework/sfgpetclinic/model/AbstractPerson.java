@@ -7,6 +7,7 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  * Created by jt on 7/13/18.
@@ -15,14 +16,15 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
+@SuperBuilder
 @Table(name = "persons")
-public class Person extends AbstractBaseEntity {
+public abstract class AbstractPerson extends AbstractBaseEntity {
 
 	/**
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Person(Long id, String firstName, String lastName) {
+	public AbstractPerson(Long id, String firstName, String lastName) {
 		super(id);
 		this.firstName = firstName;
 		this.lastName = lastName;
