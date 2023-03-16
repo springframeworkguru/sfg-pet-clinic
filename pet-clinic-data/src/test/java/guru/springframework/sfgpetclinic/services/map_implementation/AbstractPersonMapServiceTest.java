@@ -4,6 +4,7 @@
 package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,6 +41,7 @@ class AbstractPersonMapServiceTest {
 	@Test
 	void testFindByLastName() {
 		AbstractPerson foundArmin = concretePersonMapService.findByLastName("van Buuren");
+		assertNotNull(foundArmin);
 		assertEquals(Long.valueOf(1l), foundArmin.getId());
 		assertEquals("Armin", foundArmin.getFirstName());
 	}
@@ -51,6 +53,7 @@ class AbstractPersonMapServiceTest {
 	@Test
 	void testFindByFirstName() {
 		AbstractPerson foundTiesto = concretePersonMapService.findByFirstName("Tijs");
+		assertNotNull(foundTiesto);
 		assertEquals(Long.valueOf(2l), foundTiesto.getId());
 		assertEquals("Verwest", foundTiesto.getLastName());
 	}
