@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author Hoek0024 on 14 feb. 2023
@@ -26,8 +27,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@SuperBuilder
 @Inheritance(strategy = InheritanceType.JOINED)
-public class BaseEntity implements Serializable {
+public abstract class AbstractBaseEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -5,13 +5,13 @@ package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import java.util.Collections;
 
-import guru.springframework.sfgpetclinic.model.BaseEntity;
+import guru.springframework.sfgpetclinic.model.AbstractBaseEntity;
 
 /**
  * @author Hoek0024 on 17 feb. 2023
  *
  */
-public abstract class AbstractBaseEntityMapService<T extends BaseEntity> extends AbstractMapService<T, Long> {
+public abstract class AbstractBaseEntityMapService<T extends AbstractBaseEntity> extends AbstractMapService<T, Long> {
 
 	public T save(T baseEntity) {
 		nullCheck(baseEntity);

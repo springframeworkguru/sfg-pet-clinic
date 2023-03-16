@@ -20,7 +20,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "type")
-public class PetType extends BaseEntity {
+public class PetType extends AbstractBaseEntity {
 
 	@Column(name = "name")
     private String name;

@@ -16,7 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "persons")
-public class Person extends BaseEntity {
+public class Person extends AbstractBaseEntity {
 
 	/**
 	 * @param firstName

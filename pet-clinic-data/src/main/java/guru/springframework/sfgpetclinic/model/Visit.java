@@ -28,7 +28,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "visits")
-public class Visit extends BaseEntity {
+public class Visit extends AbstractBaseEntity {
 
 	@Column(name = "date")
 	private LocalDate date;

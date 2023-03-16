@@ -24,7 +24,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "specialties")
-public class Speciality extends BaseEntity {
+public class Speciality extends AbstractBaseEntity {
 
 	@Column(name = "decription")
 	private String description;
