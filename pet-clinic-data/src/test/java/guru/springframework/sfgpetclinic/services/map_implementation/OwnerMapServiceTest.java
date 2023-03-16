@@ -5,6 +5,7 @@ package guru.springframework.sfgpetclinic.services.map_implementation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -33,6 +34,9 @@ class OwnerMapServiceTest {
 	@Mock
 	PetService petService;
 	
+	@Mock
+	Pet petMock;
+	
 	@Captor
 	ArgumentCaptor<Pet> captor;
 	
@@ -53,10 +57,10 @@ class OwnerMapServiceTest {
 	 */
 	@Test
 	void testSaveOwner() {
-		//given
-		Pet stef = Pet.builder().name("Stef").build();
 		Set<Pet> pets = new HashSet<>();
-		pets.add(stef);
+		pets.add(petMock);
+		
+		//given
 		Owner owner = Owner.builder().id(id).pets(pets).build();
 		
 		//when
@@ -65,7 +69,18 @@ class OwnerMapServiceTest {
 		//then
 		assertEquals(id, savedOwner.getId());
 		verify(petService, times(1)).save(captor.capture());
-		assertTrue(captor.getAllValues().get(0) == stef);
+		assertTrue(captor.getAllValues().get(0) == petMock);
+	}
+	
+	/**
+	 * Test method for {@link guru.springframework.sfgpetclinic.services.map_implementation.OwnerMapService#save(guru.springframework.sfgpetclinic.model.Owner)}.
+	 */
+	@Test
+	void testSaveNullOwner() {
+		Owner savedOwner = ownerMapService.save(null);
+
+		assertNull(savedOwner);
+
 	}
 
 }
