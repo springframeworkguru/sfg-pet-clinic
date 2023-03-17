@@ -10,16 +10,13 @@
 
     <artifactId>pet-clinic-web</artifactId>
 
-	<properties>
-		<!-- Web dependencies -->
-	    <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
-	    <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
-	    <webjars-jquery.version>2.2.4</webjars-jquery.version>
-	    <wro4j.version>1.8.0</wro4j.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-	</properties>
+    <properties>
+        <!-- Web dependencies -->
+        <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
+        <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
+        <webjars-jquery.version>2.2.4</webjars-jquery.version>
+        <wro4j.version>1.8.0</wro4j.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -41,95 +38,103 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok</artifactId>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
-            <optional>true</optional>
-
         </dependency>
+
+        <!-- webjars -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${webjars-jquery.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+            <version>${webjars-jquery-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${webjars-bootstrap.version}</version>
+        </dependency>
+        <!-- end of webjars -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-	            	<groupId>junit</groupId>
-	            	<artifactId>junit</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
-                <dependency>
-	        <groupId>org.junit.jupiter</groupId>
-	        <artifactId>junit-jupiter-api</artifactId>
-	        <scope>test</scope>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-	        <groupId>org.junit.jupiter</groupId>
-	        <artifactId>junit-jupiter-engine</artifactId>
-	        <scope>test</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-		    <groupId>org.mockito</groupId>
-		    <artifactId>mockito-junit-jupiter</artifactId>
-		    <version>2.22.0</version>
-		    <scope>test</scope>
-		</dependency>
-        
-            <!-- webjars -->
-	    <dependency>
-	      <groupId>org.webjars</groupId>
-	      <artifactId>webjars-locator-core</artifactId>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.webjars</groupId>
-	      <artifactId>jquery</artifactId>
-	      <version>${webjars-jquery.version}</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.webjars</groupId>
-	      <artifactId>jquery-ui</artifactId>
-	      <version>${webjars-jquery-ui.version}</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.webjars</groupId>
-	      <artifactId>bootstrap</artifactId>
-	      <version>${webjars-bootstrap.version}</version>
-	    </dependency>
-	    <!-- end of webjars -->
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>2.22.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-    
+
     <build>
-    	<plugins>
-    	<plugin>
-	        <groupId>ro.isdc.wro4j</groupId>
-	        <artifactId>wro4j-maven-plugin</artifactId>
-	        <version>${wro4j.version}</version>
-	        <executions>
-	          <execution>
-	            <phase>generate-resources</phase>
-	            <goals>
-	              <goal>run</goal>
-	            </goals>
-	          </execution>
-	        </executions>
-	        <configuration>
-	          <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-	          <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
-	          <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
-	          <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
-	          <contextFolder>${basedir}/src/main/less</contextFolder>
-	        </configuration>
-	        <dependencies>
-	          <dependency>
-	            <groupId>org.webjars</groupId>
-	            <artifactId>bootstrap</artifactId>
-	            <version>${webjars-bootstrap.version}</version>
-	          </dependency>
-	        </dependencies>
-	      </plugin>
-    	</plugins>
+        <plugins>
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>${wro4j.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
+                    <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
+                    <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
+                    <contextFolder>${basedir}/src/main/less</contextFolder>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.webjars</groupId>
+                        <artifactId>bootstrap</artifactId>
+                        <version>${webjars-bootstrap.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+        </plugins>
     </build>
     
     
