@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.services.interfaces.OwnerService;
-import guru.springframework.sfgpetclinic.services.interfaces.PetService;
 
 /**
  * @author Hoek0024 on 14 mrt. 2023
@@ -23,7 +22,7 @@ public class OwnerSDJpaService<T extends Owner, R extends OwnerRepository<Owner>
 	/**
 	 * @param repository
 	 */
-	public OwnerSDJpaService(R repository, PetService petservice) {
+	public OwnerSDJpaService(R repository) {
 		super(repository);
 	}
 }

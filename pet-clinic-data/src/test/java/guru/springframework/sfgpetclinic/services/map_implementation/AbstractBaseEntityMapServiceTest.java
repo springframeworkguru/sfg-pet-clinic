@@ -15,7 +15,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import guru.springframework.sfgpetclinic.model.AbstractBaseEntity;
-import lombok.Builder;
 import lombok.experimental.SuperBuilder;
 
 /**
@@ -137,7 +136,6 @@ class AbstractBaseEntityMapServiceTest {
 
 }
 
-@Builder
 class ConcreteBaseEntityMapService extends AbstractBaseEntityMapService<ConcreteBaseEntity> {
 
 }

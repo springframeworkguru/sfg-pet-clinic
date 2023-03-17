@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import guru.springframework.sfgpetclinic.model.AbstractPerson;
-import lombok.Builder;
 import lombok.experimental.SuperBuilder;
 
 /**
@@ -82,7 +81,6 @@ class AbstractPersonMapServiceTest {
 
 }
 
-@Builder
 class ConcretePersonMapService extends AbstractPersonMapService<AbstractPerson> {
 
 }
