@@ -1,10 +1,12 @@
+C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\AbstractPersonSDJpaService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\package-info.java
+C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\AbstractPersonMapService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\SpecialityMapService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\repositories\OwnerRepository.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\Vet.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\VetService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\AbstractBaseEntityMapService.java
-C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\PersonMapService.java
+C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\AbstractPerson.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\PetSDJpaService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\SpecialitySDJpaService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\OwnerService.java
@@ -13,7 +15,6 @@ C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframew
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\AbstractBaseEntitySDJpaService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\PetMapService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\VetMapService.java
-C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\BaseEntity.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\Visit.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\OwnerMapService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\Pet.java
@@ -31,10 +32,8 @@ C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframew
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\PetService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\VisitService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\VetSDJpaService.java
-C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\Person.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\Speciality.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\package-info.java
-C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\PersonSDJpaService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\package-info.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\repositories\SpecialityRepository.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\springdatajpa\OwnerSDJpaService.java
@@ -46,3 +45,4 @@ C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframew
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\SpecialityService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\interfaces\CrudService.java
 C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\services\map_implementation\VisitMapService.java
+C:\dev\workspaces\sfg-pet-clinic\pet-clinic-data\src\main\java\guru\springframework\sfgpetclinic\model\AbstractBaseEntity.java

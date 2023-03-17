@@ -65,30 +65,20 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>repackage</goal>
-                    </goals>
-                    <configuration>
-                        <skip>true</skip>
-                    </configuration>
-                </execution>
-            </executions>
-            </plugin>
-            <plugin>
-	            <artifactId>maven-surefire-plugin</artifactId>
-	            <dependencies>
-		            <dependency>
-			            <groupId>org.junit.platform</groupId>
-			            <artifactId>junit-platform-surefire-providerartifactId</artifactId>
-			            <version>${junit-platform.version}</version>
-		            </dependency>
-	            </dependencies>
-            </plugin>
+		     <plugin>
+		         <groupId>org.springframework.boot</groupId>
+		         <artifactId>spring-boot-maven-plugin</artifactId>
+		     <executions>
+		         <execution>
+		             <goals>
+		                 <goal>repackage</goal>
+		             </goals>
+		             <configuration>
+		                 <skip>true</skip>
+		             </configuration>
+		         </execution>
+		     </executions>
+		     </plugin>
         </plugins>
     </build>
 </project>
