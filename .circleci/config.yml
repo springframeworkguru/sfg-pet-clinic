@@ -16,31 +16,30 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     
-    working_directory: ~/sfg-pet-clinic
+    working_directory: ~/repo
+
+    environment:
+    # Customize the JVM maximum heap limit
+    MAVEN_OPTS: -Xmx3200m
 
     steps:
-      - checkout
+    - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
+    # Download and cache dependencies
+    - restore_cache:
           keys:
-            - Spring-Pet-Clinic-{{ checksum "pom.xml" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+          - v1-dependencies-{{ checksum "pom.xml" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
-      - run: mvn dependency:go-offline
+    - run: mvn install -DskipTests
 
-      - save_cache:
+    - run: mvn dependency:go-offline
+
+    - save_cache:
           paths:
-            - ~/.m2
-          key: Spring-Pet-Clinic-{{ checksum "pom.xml" }}
+          - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      # run tests!
-      - run: mvn integration-test
-
-      - store_test_results:
-          path: target/surefire-reports
-
-      - run:
-          name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash)
+    # run tests!
+    - run: mvn integration-test
