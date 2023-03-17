@@ -11,13 +11,13 @@ import guru.springframework.sfgpetclinic.services.interfaces.PersonService;
  * @author Hoek0024 on 14 mrt. 2023
  *
  */
-public abstract class PersonSDJpaService<T extends AbstractPerson, R extends PersonRepository<T>>
+public abstract class AbstractPersonSDJpaService<T extends AbstractPerson, R extends PersonRepository<T>>
 		extends AbstractBaseEntitySDJpaService<T, R> implements PersonService<T> {
 
 	/**
 	 * @param repository
 	 */
-	public PersonSDJpaService(R repository) {
+	public AbstractPersonSDJpaService(R repository) {
 		super(repository);
 	}
 
