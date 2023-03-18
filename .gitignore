@@ -140,3 +140,16 @@ Desktop.ini
 ######################
 .eslintcache
 /pet-clinic-web/target/classes/messages/*.properties
+/pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map_implementation.AbstractBaseEntityMapServiceTest.xml
+/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map_implementation.AbstractPersonMapServiceTest.xml
+/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map_implementation.OwnerMapServiceTest.xml
+/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.springdatajpa.AbstractBaseEntitySDJpaServiceTest.xml
+/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.springdatajpa.AbstractPersonSDJpaServiceTest.xml
+/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map_implementation.AbstractBaseEntityMapServiceTest.txt
+/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map_implementation.AbstractPersonMapServiceTest.txt
+/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map_implementation.OwnerMapServiceTest.txt
+/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.springdatajpa.AbstractBaseEntitySDJpaServiceTest.txt
+/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.springdatajpa.AbstractPersonSDJpaServiceTest.txt
+/pet-clinic-web/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.xml
+/pet-clinic-web/target/surefire-reports/guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.txt
